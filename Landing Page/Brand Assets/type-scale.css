@@ -1,0 +1,133 @@
+/* ------------------------------
+ | MODULAR TYPE SCALE
+ | ------------------------------
+ | Helps you create type scales that bring natural rhythm,
+ | consistency, and balance to your designs.
+ |
+ | BASE VALUES:
+ | - Font Size: 18px / 1.125rem
+ | - Line Height: 24px / 1.3333
+ | - Letter Spacing: 3.5% / 0.035em
+ |
+ | SCALE:
+ | - Ratio: 1.33 - Perfect Fourth
+ |
+ | LINE GRID:
+ | - Grid Unit: 4px / 0.25rem
+ |
+ | FLUID SCALING:
+ | - Min viewport: 375px (mobile)
+ | - Max viewport: 1440px (desktop)
+ | - Uses clamp() to interpolate between mobile and desktop values
+ |
+ | Scale ratio is calculated using an equal temperament tuning system.
+ | Created with Precise Type / https://precise-type.com
+ | Tools & Models by Adonis Raul Raduca
+ */
+
+/* --- Font Sizes --- */
+
+:root {
+  /* below the base — no fluid scaling needed, small sizes stay fixed */
+  --font-size-2b: 0.625rem;
+  --font-size-1b: 0.8125rem;
+
+  /* the base — fixed, already comfortable at all sizes */
+  --font-size: 1.125rem;
+
+  /* above the base — fluid: clamp(mobile, fluid, desktop) */
+  --font-size-1: clamp(1.25rem, 1.25vw + 0.75rem, 1.5rem);
+  --font-size-2: clamp(1.5rem, 1.75vw + 0.875rem, 2rem);
+  --font-size-3: clamp(1.75rem, 2.5vw + 0.8125rem, 2.6875rem);
+  --font-size-4: clamp(2rem, 3.5vw + 0.6875rem, 3.5625rem);
+  --font-size-5: clamp(2.5rem, 5vw + 0.625rem, 4.75rem);
+  --font-size-6: clamp(3rem, 7vw + 0.625rem, 6.375rem);
+}
+
+/* --- Line Heights --- */
+
+:root {
+  /* below the base */
+  --line-height-2b: 1.6;
+  --line-height-1b: 1.5385;
+
+  /* the base */
+  --line-height: 1.3333;
+
+  /* above the base */
+  --line-height-1: 1.3333;
+  --line-height-2: 1.25;
+  --line-height-3: 1.1163;
+  --line-height-4: 1.1228;
+  --line-height-5: 1.1053;
+  --line-height-6: 1.0588;
+}
+
+/* --- Letter Spacings --- */
+
+:root {
+  /* below the base */
+  --letter-space-2b: 0.087em;
+  --letter-space-1b: 0.06em;
+
+  /* the base */
+  --letter-space: 0.035em;
+
+  /* above the base */
+  --letter-space-1: 0.0187em;
+  --letter-space-2: 0.0066em;
+  --letter-space-3: -0.0028em;
+  --letter-space-4: -0.0095em;
+  --letter-space-5: -0.0146em;
+  --letter-space-6: -0.0185em;
+}
+
+/* ------------------------------
+ | Examples
+ */
+
+/* --- Default Text --- */
+
+body {
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-space);
+}
+
+/* --- Headers --- */
+
+:is(h1, h2, h3) {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
+  letter-spacing: var(--letter-space-3);
+}
+h2 {
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-2);
+  letter-spacing: var(--letter-space-2);
+}
+h3 {
+  font-size: var(--font-size-1);
+  line-height: var(--line-height-1);
+  letter-spacing: var(--letter-space-1);
+}
+
+/* --- Alternative Text Sizes --- */
+
+:is(p, span, a, ul, ol, dl, li, dt, dd, label, blockquote, code) {
+  &.small-text {
+    font-size: var(--font-size-1b);
+    line-height: var(--line-height-1b);
+    letter-spacing: var(--letter-space-1b);
+  }
+  &.large-text {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
+    letter-spacing: var(--letter-space-1);
+  }
+}
