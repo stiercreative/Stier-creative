@@ -446,6 +446,42 @@ section {
     color: var(--text-primary);
 }
 
+/* How We Fix Section */
+.how-we-fix .cards-container {
+    margin-bottom: 2.5rem;
+}
+
+.fix-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 2rem;
+}
+
+.fix-number {
+    font-family: var(--font-body);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-electric-gold);
+    margin-bottom: 1.25rem;
+}
+
+.fix-card h3 {
+    text-align: left;
+    margin-bottom: 0.85rem;
+}
+
+.fix-card p {
+    text-align: left;
+}
+
+.fix-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
 /* Accordion (Protocol & FAQ) */
 .accordion {
     max-width: 800px;
@@ -812,7 +848,7 @@ section {
     display: none;
 }
 
-/* Mobile-only line breaks in headings — visible on phones, hidden on desktop */
+/* Mobile-only line breaks in headings: visible on phones, hidden on desktop */
 .br-mobile { display: inline; }
 @media (min-width: 768px) {
     .br-mobile { display: none; }
