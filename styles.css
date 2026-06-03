@@ -812,6 +812,12 @@ section {
     display: none;
 }
 
+/* Mobile-only line breaks in headings — visible on phones, hidden on desktop */
+.br-mobile { display: inline; }
+@media (min-width: 768px) {
+    .br-mobile { display: none; }
+}
+
 @media (max-width: 767px) {
     :root {
         --text-display: 40px;
